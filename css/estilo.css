@@ -53,3 +53,52 @@ h1, h2 {
   from { transform: translate(0, 0); }
   to { transform: translate(-200px, 200px); }
 }
+
+.shooting-stars {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.shooting-stars div {
+  position: absolute;
+  width: 2px;
+  height: 100px;
+  background: linear-gradient(white, transparent);
+  opacity: 0.7;
+  transform: rotate(45deg);
+  animation: shoot 3s linear infinite;
+}
+
+/* Estrelas da base esquerda */
+.shooting-stars .star1 { bottom: -100px; left: -100px; animation-delay: 0s; }
+.shooting-stars .star2 { bottom: -100px; left: 10%; animation-delay: 1s; }
+.shooting-stars .star3 { bottom: -100px; left: 25%; animation-delay: 2s; }
+.shooting-stars .star4 { bottom: -100px; left: 40%; animation-delay: 3s; }
+.shooting-stars .star5 { bottom: -100px; left: 60%; animation-delay: 4s; }
+
+/* Estrelas da lateral esquerda completando a tela */
+.shooting-stars .star6 { bottom: 20%; left: -100px; animation-delay: 1.5s; }
+.shooting-stars .star7 { bottom: 40%; left: -100px; animation-delay: 2.5s; }
+.shooting-stars .star8 { bottom: 60%; left: -100px; animation-delay: 3.5s; }
+.shooting-stars .star9 { bottom: 80%; left: -100px; animation-delay: 4.5s; }
+.shooting-stars .star10 { bottom: 95%; left: -100px; animation-delay: 4.7s; }
+
+@keyframes shoot {
+  0% {
+    transform: translate(0, 0) rotate(45deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(500px, -500px) rotate(45deg);
+    opacity: 0;
+  }
+}
