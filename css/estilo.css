@@ -9,14 +9,37 @@ body {
   z-index: 1;
 }
 
-
+/* Fundo estrelado via CSS puro */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  background: transparent;
+  box-shadow:
+    50px 100px white,
+    120px 300px white,
+    300px 200px white,
+    400px 50px white,
+    600px 400px white,
+    800px 100px white,
+    1000px 250px white,
+    1100px 300px white,
+    1300px 150px white,
+    1500px 500px white;
+}
 
 .universo {
   padding: 20px;
   text-align: center;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
+
 
 section {
   margin: 60px 0;
@@ -43,28 +66,4 @@ p {
 
 h1, h2 {
   color: #ff70a6;
-}
-
-/* Fundo estrelado gerado com CSS */
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: transparent;
-  z-index: 0;
-  pointer-events: none;
-  box-shadow:
-    10px 20px white,
-    100px 150px white,
-    250px 80px white,
-    400px 300px white,
-    700px 200px white,
-    800px 500px white,
-    1200px 100px white,
-    300px 600px white,
-    900px 400px white,
-    1300px 250px white;
 }
