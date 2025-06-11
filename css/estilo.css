@@ -19,10 +19,20 @@ body::before {
   height: 100%;
   z-index: 0;
   pointer-events: none;
-  background-image: radial-gradient(white 1px, transparent 1px);
-  background-size: 3px 3px;
+  background: transparent;
+  opacity: 0.4;
+  background-image:
+    radial-gradient(white 0.8px, transparent 0.8px),
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(white 1.2px, transparent 1.2px),
+    radial-gradient(white 1px, transparent 1px);
   background-repeat: repeat;
-  opacity: 0.3;
+  background-size: 2000px 2000px, 1500px 1500px, 1000px 1000px, 500px 500px;
+  background-position:
+    0 0,
+    100px 400px,
+    300px 200px,
+    600px 100px;
 }
 
 .universo {
