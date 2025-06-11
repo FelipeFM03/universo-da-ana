@@ -6,13 +6,12 @@ body {
   scroll-behavior: smooth;
   position: relative;
   z-index: 1;
-
-  background-color: #000010;
   background-image: url('../fotos/universo_bakcground.avif');
-  background-size: cover;
+  background-size: 100% auto;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-position: center center;
+  background-position: top center;
+  background-color: #000010;
 }
 
 .universo {
