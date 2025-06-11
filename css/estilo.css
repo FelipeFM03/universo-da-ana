@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #000010;
+  background-image: url('https://cdn.pixabay.com/photo/2017/08/30/07/52/architecture-2691655_1280.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center center;
+  color: white;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+
+.universo {
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+section {
+  margin: 60px 0;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease-out;
+}
+
+section.revelado {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+img {
+  max-width: 90%;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255,255,255,0.15);
+}
+
+p {
+  font-size: 1.2em;
+  margin-top: 20px;
+}
+
+h1, h2 {
+  color: #ff70a6;
+}
