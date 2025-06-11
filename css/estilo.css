@@ -19,18 +19,31 @@ body::before {
   height: 100%;
   z-index: 0;
   pointer-events: none;
-  background: transparent;
-  box-shadow:
-    50px 100px white,
-    120px 300px white,
-    300px 200px white,
-    400px 50px white,
-    600px 400px white,
-    800px 100px white,
-    1000px 250px white,
-    1100px 300px white,
-    1300px 150px white,
-    1500px 500px white;
+  background-color: transparent;
+  background-image: 
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(white 1px, transparent 1px);
+  background-repeat: repeat;
+  background-size: 
+    300px 300px,
+    400px 400px,
+    500px 500px,
+    600px 600px,
+    700px 700px,
+    800px 800px;
+  background-position: 
+    0 0,
+    100px 200px,
+    200px 400px,
+    300px 100px,
+    400px 300px,
+    500px 500px;
+  animation: estrelasMovendo 150s linear infinite;
+  opacity: 0.8;
 }
 
 .universo {
@@ -39,7 +52,6 @@ body::before {
   position: relative;
   z-index: 2;
 }
-
 
 section {
   margin: 60px 0;
@@ -66,4 +78,9 @@ p {
 
 h1, h2 {
   color: #ff70a6;
+}
+
+@keyframes estrelasMovendo {
+  from { transform: translate(0, 0); }
+  to { transform: translate(-200px, 200px); }
 }
