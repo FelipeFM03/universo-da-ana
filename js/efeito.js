@@ -82,3 +82,27 @@ window.addEventListener('scroll', () => {
     ultimaPosY = novaPosY;
   }
 });
+
+document.addEventListener('touchmove', function (e) {
+  const touch = e.touches[0];
+
+  const heart = document.createElement('span');
+  heart.innerText = '💖';
+  heart.style.position = 'absolute';
+  heart.style.left = `${touch.pageX}px`;
+  heart.style.top = `${touch.pageY}px`;
+  heart.style.fontSize = '24px';
+  heart.style.opacity = 1;
+  heart.style.pointerEvents = 'none';
+  heart.style.transition = 'transform 1s ease-out, opacity 1s ease-out';
+  heart.style.zIndex = 9999;
+
+  document.body.appendChild(heart);
+
+  requestAnimationFrame(() => {
+    heart.style.transform = 'translateY(-100px) scale(1.5)';
+    heart.style.opacity = 0;
+  });
+
+  setTimeout(() => heart.remove(), 1000);
+});
