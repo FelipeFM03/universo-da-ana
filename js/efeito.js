@@ -24,3 +24,32 @@ document.addEventListener('click', function (e) {
 
   setTimeout(() => heart.remove(), 1000);
 });
+let lastScrollTop = 0;
+window.addEventListener('scroll', function () {
+  const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+  // Executa o efeito apenas se o scroll desceu
+  if (currentScroll > lastScrollTop) {
+    const heart = document.createElement('span');
+    heart.innerText = '💖';
+    heart.style.position = 'absolute';
+    heart.style.left = `${Math.random() * window.innerWidth}px`;
+    heart.style.top = `${window.scrollY + window.innerHeight / 2}px`;
+    heart.style.fontSize = '24px';
+    heart.style.opacity = 1;
+    heart.style.pointerEvents = 'none';
+    heart.style.transition = 'transform 1s ease-out, opacity 1s ease-out';
+    heart.style.zIndex = 9999;
+
+    document.body.appendChild(heart);
+
+    requestAnimationFrame(() => {
+      heart.style.transform = 'translateY(-100px) scale(1.5)';
+      heart.style.opacity = 0;
+    });
+
+    setTimeout(() => heart.remove(), 1000);
+  }
+
+  lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Previni valores negativos
+});
