@@ -2,15 +2,13 @@ body {
   margin: 0;
   font-family: 'Arial', sans-serif;
   background-color: #000010;
-  background-image: url('https://cdn.pixabay.com/photo/2017/08/30/07/52/architecture-2691655_1280.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center center;
   color: white;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  position: relative;
+  z-index: 1;
 }
+
 
 
 .universo {
@@ -45,4 +43,28 @@ p {
 
 h1, h2 {
   color: #ff70a6;
+}
+
+/* Fundo estrelado gerado com CSS */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: 0;
+  pointer-events: none;
+  box-shadow:
+    10px 20px white,
+    100px 150px white,
+    250px 80px white,
+    400px 300px white,
+    700px 200px white,
+    800px 500px white,
+    1200px 100px white,
+    300px 600px white,
+    900px 400px white,
+    1300px 250px white;
 }
