@@ -53,3 +53,32 @@ window.addEventListener('scroll', function () {
 
   lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Previni valores negativos
 });
+
+let ultimaPosY = window.scrollY;
+
+window.addEventListener('scroll', () => {
+  const novaPosY = window.scrollY;
+  if (Math.abs(novaPosY - ultimaPosY) > 40) { // só gera coração com scroll mais perceptível
+    const heart = document.createElement('span');
+    heart.classList.add('heart');
+    heart.innerText = '💖';
+
+    // Posição aleatória horizontal
+    const x = Math.random() * window.innerWidth;
+    const y = novaPosY + window.innerHeight / 2;
+
+    heart.style.left = `${x}px`;
+    heart.style.top = `${y}px`;
+
+    document.body.appendChild(heart);
+
+    requestAnimationFrame(() => {
+      heart.style.transform = 'translateY(-100px) scale(1.5)';
+      heart.style.opacity = 0;
+    });
+
+    setTimeout(() => heart.remove(), 1000);
+
+    ultimaPosY = novaPosY;
+  }
+});
