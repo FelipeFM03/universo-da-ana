@@ -6,11 +6,12 @@ body {
   scroll-behavior: smooth;
   position: relative;
   z-index: 1;
-  background-image: url('../fotos/universo_bakcground.avif');
-  background-size: 100% auto;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: top center;
+
+  background-image: url('../fotos/universo_bakcground.jpg');
+  background-size: calc(100% + 10px) auto; /* Zoom leve de 10px */
+  background-repeat: repeat-y;
+  background-attachment: scroll;
+  background-position: center top;
   background-color: #000010;
 }
 
